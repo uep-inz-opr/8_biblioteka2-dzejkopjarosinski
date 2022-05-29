@@ -29,19 +29,6 @@ class Biblioteka(object):
             self.wyniki.append('True')
 
 
-    '''
-    def counting(self):
-        final_list=[]
-        sort_list=[]
-        for book in self.books:
-            copies_counted = self.copies.count(book)
-            book1 = [book[0], book[1], copies_counted]
-            final_list.append(book1)
-        sort_list = sorted(final_list, key=lambda x: x[0])
-        for el in sort_list:
-            el1 = (el[0], el[1], el[2])
-            print(el1)
-    '''
 
     def reader(self, name, title):
         if name in self.readers:
@@ -86,6 +73,7 @@ class Biblioteka(object):
         else:
             self.wyniki.append('False')
 
+    # Return the Trues and Falses 
     def podajWynik(self):
         for wynik in self.wyniki:
             print(wynik)
@@ -93,13 +81,14 @@ class Biblioteka(object):
 
 
 
-
+# Create an instance of the class
 biblio = Biblioteka()
 
 
 
 n = int(input())
 
+#logic for input 
 for i in range(0, n):
     x = eval(input())
     if x[0] == "dodaj":
