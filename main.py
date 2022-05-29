@@ -104,7 +104,7 @@ for i in range(0, n):
     x = eval(input())
     if x[0] == "dodaj":
         biblio.addCopy(x)
-    elif x[0] == "wyporzycz":
+    elif x[0] == "wypozycz":
         biblio.borrow(x[1],x[2])
     elif x[0] == "oddaj":
         biblio.return_back(x[1],x[2])
