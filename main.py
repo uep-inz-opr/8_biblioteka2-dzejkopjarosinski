@@ -1,10 +1,10 @@
 class Biblioteka(object):
 
-    
+    # Initialize lists to contain data
     def __init__(self):
         self.books = []
         self.titles=[]
-        self.readers= {}
+        self.readers= {} #Will be adding value to the key
         self.wyniki=[]
         self.copies=[]
 
@@ -16,18 +16,20 @@ class Biblioteka(object):
 
     def addCopy(self,copy):
         copy1 = list(copy)
+        # If a given copy is in the list of books, append it to lists of copies and titles then return True 
         if copy1[1:3] in self.books:
             self.copies.append(copy1[1:3])
             self.titles.append(copy1[1])
             self.wyniki.append('True')
         else:
+         # Else add te book to the liblary and also return True (Object needed as class parameter)   
             biblio.addBook(copy1[1:3])
             self.copies.append(copy1[1:3])
             self.titles.append(copy1[1])
             self.wyniki.append('True')
 
 
-
+    '''
     def counting(self):
         final_list=[]
         sort_list=[]
@@ -39,11 +41,13 @@ class Biblioteka(object):
         for el in sort_list:
             el1 = (el[0], el[1], el[2])
             print(el1)
-
+    '''
 
     def reader(self, name, title):
         if name in self.readers:
             if len(self.readers[name]) < 3 and title not in self.readers[name]:
+
+                # Append value to the key
                 self.readers[name].append(title)
                 self.titles.remove(title)
                 self.wyniki.append('True')
@@ -56,6 +60,7 @@ class Biblioteka(object):
             self.wyniki.append('True')
 
 
+    # Perform remove and append on the reader and the list he is in
 
     def borrow(self,name,title):
         if title in self.titles:
