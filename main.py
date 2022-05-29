@@ -1,4 +1,4 @@
-class Biblioteka():
+class Biblioteka(object):
 
     
     def __init__(self):
@@ -10,10 +10,8 @@ class Biblioteka():
 
 
 
-
     def addBook(self, book):
         self.books.append(book)
-
 
 
     def addCopy(self,copy):
@@ -27,9 +25,6 @@ class Biblioteka():
             self.copies.append(copy1[1:3])
             self.titles.append(copy1[1])
             self.wyniki.append('True')
-
-
-
 
 
 
